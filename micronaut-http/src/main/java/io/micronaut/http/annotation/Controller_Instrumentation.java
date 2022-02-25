@@ -2,11 +2,12 @@ package io.micronaut.http.annotation;
 
 import com.newrelic.api.agent.NewRelic;
 import com.newrelic.api.agent.TransactionNamePriority;
+import com.newrelic.api.agent.weaver.MatchType;
 import com.newrelic.api.agent.weaver.WeaveIntoAllMethods;
 import com.newrelic.api.agent.weaver.WeaveWithAnnotation;
 import com.newrelic.api.agent.weaver.Weaver;
 
-@WeaveWithAnnotation(annotationClasses = {"io.micronaut.http.annotation.Controller"})
+@WeaveWithAnnotation(annotationClasses = {"io.micronaut.http.annotation.Controller"},type = MatchType.Interface)
 public class Controller_Instrumentation {
 
 	@WeaveWithAnnotation(annotationClasses = {"io.micronaut.http.annotation.Get", "io.micronaut.http.annotation.Post", "io.micronaut.http.annotation.Delete",

@@ -5,6 +5,7 @@ apply plugin: 'java'
 
 dependencies {
    implementation 'io.micronaut:micronaut-http-client:3.0.0'
+	implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.4.8'
 
    // New Relic Java Agent dependencies
    implementation 'com.newrelic.agent.java:newrelic-agent:6.4.0'
@@ -23,7 +24,7 @@ jar {
 }
 
 verifyInstrumentation {
-	passes 'io.micronaut:micronaut-http-client:[3.0.0,)'
+	passes 'io.micronaut:micronaut-http-client:(3.0.3,)'
 	excludeRegex '.*RC[0-9]'
 	excludeRegex '.*M[0-9]'
 }
