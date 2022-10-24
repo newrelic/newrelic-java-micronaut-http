@@ -78,7 +78,22 @@ public class Controller_Instrumentation {
 								}
 							}
 						} else {
-							
+							Patch patch = Weaver.getMethodAnnotation(Patch.class);
+							if(patch != null) {
+								methodName = "PATCH";
+								value = patch.value();
+								if(value == null) {
+									value = patch.uri();
+									if(value == null) {
+										String[] values = patch.uris();
+										if(values != null) {
+											value = String.join(",", values);
+										}
+									}
+								}
+							} else {
+
+							}
 						}
 					}
 				}
@@ -92,6 +107,7 @@ public class Controller_Instrumentation {
 			if(value != null) {
 				sb.append(value);
 			}
+			System.out.println("melvin: value: " + sb.toString());
 			NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.FRAMEWORK_HIGH, true, "MicronautController", sb.toString());
 		}
 	}
