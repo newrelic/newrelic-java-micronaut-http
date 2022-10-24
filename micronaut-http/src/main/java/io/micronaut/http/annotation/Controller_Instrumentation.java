@@ -107,7 +107,6 @@ public class Controller_Instrumentation {
 			if(value != null) {
 				sb.append(value);
 			}
-			System.out.println("melvin: value: " + sb.toString());
 			NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.FRAMEWORK_HIGH, true, "MicronautController", sb.toString());
 		}
 	}
