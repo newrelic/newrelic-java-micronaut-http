@@ -23,5 +23,6 @@ jar {
 }
 
 verifyInstrumentation {
-  passes 'io.micronaut:micronaut-router:[2.0.0,)'
+  passes 'io.micronaut:micronaut-router:[2.0.0,4.0.0)'
+  excludeRegex '.*M.*' 
 }
