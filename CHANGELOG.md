@@ -1,3 +1,6 @@
+## Version: [v1.0.2](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.2) | Created: 2023-08-07
+
+
 ## Version: [v1.0.1](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.1) | Created: 2023-08-07
 ### Build Upgrades
 - Pdate build.gradle
