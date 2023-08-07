@@ -1,3 +1,11 @@
+## Version: [v1.0.1](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.1) | Created: 2023-08-07
+### Build Upgrades
+- Pdate build.gradle
+- Pdate build.gradle
+- Upgraded gradle and java version
+- Implemented automated release through git action.
+- Upgraded agent api to 7.x.x
+
 
 
 ## To install:
