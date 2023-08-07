@@ -1,0 +1,25 @@
+name: Submit dependency graph
+on:
+  push:
+  
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+          java-version: 17
+          distribution: 'temurin'
+    - name: Setup Gradle to generate and submit dependency graphs
+      uses: gradle/gradle-build-action@v2.6.1
+      with:
+        dependency-graph: generate-and-submit
+    - name: Run a build, generating the dependency graph snapshot which will be submitted
+      run: |
+       ./newrelic-dependencies.sh 
+       ./gradlew build
