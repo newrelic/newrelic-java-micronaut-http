@@ -1,3 +1,7 @@
+## Version: [v1.0.3](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.3) | Created: 2023-10-04
+### Bug Fixes
+- Updated release flow to build the code using JDK8
+
 ## Version: [v1.0.2](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.2) | Created: 2023-08-07
 
 
