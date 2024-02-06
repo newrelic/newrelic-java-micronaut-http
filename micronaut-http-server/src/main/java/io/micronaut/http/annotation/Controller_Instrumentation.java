@@ -1,7 +1,6 @@
 package io.micronaut.http.annotation;
 
 import com.newrelic.api.agent.NewRelic;
-import com.newrelic.api.agent.Trace;
 import com.newrelic.api.agent.TransactionNamePriority;
 import com.newrelic.api.agent.weaver.MatchType;
 import com.newrelic.api.agent.weaver.WeaveIntoAllMethods;

@@ -1,4 +1,4 @@
-package com.newrelic.instrumentation.micronaut.netty;
+package com.newrelic.instrumentation.micronaut.netty_3;
 
 import java.util.HashMap;
 import java.util.Map;
