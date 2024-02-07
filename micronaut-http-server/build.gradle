@@ -1,11 +1,10 @@
 
-// Build.gradle generated for instrumentation module micronaut-http-client-3
+// Build.gradle generated for instrumentation module micronaut-http
 
 apply plugin: 'java'
 
 dependencies {
-   implementation 'io.micronaut:micronaut-http:3.0.0'
-	implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.4.8'
+   implementation 'io.micronaut:micronaut-http-server:2.4.0'
 
    // New Relic Java Agent dependencies
    implementation 'com.newrelic.agent.java:newrelic-agent:7.4.0'
@@ -18,13 +17,11 @@ jar {
   manifest {
     attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.micronaut-http'
     attributes 'Implementation-Vendor': 'New Relic Labs'
-    attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
+    attributes 'Implementation-Vendor-Id': 'com.newrelic.labs' 
     attributes 'Implementation-Version': 1.0
   }
 }
 
 verifyInstrumentation {
-	passes 'io.micronaut:micronaut-http-client:(3.0.3,)'
-	excludeRegex '.*RC[0-9]'
-	excludeRegex '.*M[0-9]'
+	passes 'io.micronaut:micronaut-http-server:[2.4.0,)'
 }

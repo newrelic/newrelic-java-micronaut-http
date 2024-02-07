@@ -3,7 +3,7 @@ package io.micronaut.http.server.netty;
 import com.newrelic.api.agent.Trace;
 import com.newrelic.api.agent.weaver.Weave;
 import com.newrelic.api.agent.weaver.Weaver;
-import com.newrelic.instrumentation.micronaut.netty.Utils;
+import com.newrelic.instrumentation.micronaut.netty_2.Utils;
 
 import io.micronaut.web.router.RouteMatch;
 import io.netty.channel.ChannelHandlerContext;
