@@ -1,3 +1,7 @@
+## Version: [v1.0.4](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.4) | Created: 2024-02-07
+### Bug Fixes
+- Replaced regex pattern transaction name with url template format
+
 ## Version: [v1.0.3](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.3) | Created: 2023-10-04
 ### Bug Fixes
 - Updated release flow to build the code using JDK8
