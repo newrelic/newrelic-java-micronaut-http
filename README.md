@@ -47,7 +47,7 @@ Currently not available
 
 ## Support
 
-New Relic has open-sourced this project. This project is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT. Issues and contributions should be reported to the project here on GitHub.
+New Relic has open-sourced this project. Issues and contributions should be reported to the project here on GitHub.
 
 We encourage you to bring your experiences and questions to the [Explorers Hub](https://discuss.newrelic.com) where our community members collaborate on solutions and new ideas.
 
@@ -63,6 +63,6 @@ If you believe you have found a security vulnerability in this project or any of
 
 ## License
 
-New Relic Java Agent Instrumentation for Java Undertow is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
+New Relic Java Agent Instrumentation for Java Micronaut Http is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
 
 
