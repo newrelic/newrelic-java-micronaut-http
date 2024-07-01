@@ -6,7 +6,7 @@ apply plugin: 'java'
 targetCompatibility=JavaVersion.VERSION_17
 
 dependencies {
-   implementation 'io.micronaut:micronaut-http-server-netty:4.3.0'
+   implementation 'io.micronaut:micronaut-http-server-netty:4.5.0'
    implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.5.11'
 
    // New Relic Java Agent dependencies
@@ -18,7 +18,7 @@ dependencies {
 
 jar {
   manifest {
-    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.micronaut-http-server-netty-4.3'
+    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.micronaut-http-server-netty-4.5'
     attributes 'Implementation-Vendor': 'New Relic Labs'
     attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
     attributes 'Implementation-Version': 1.0
@@ -26,7 +26,7 @@ jar {
 }
 
 verifyInstrumentation {
-  passes 'io.micronaut:micronaut-http-server-netty:[4.3.0,4.4.0)'
+  passes 'io.micronaut:micronaut-http-server-netty:[4.5.0,)'
   excludeRegex '.*RC.'
   excludeRegex '.*M.'
 }
