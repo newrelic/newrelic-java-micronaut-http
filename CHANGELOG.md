@@ -1,3 +1,7 @@
+## Version: [v1.1.1](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.1.1) | Created: 2024-07-01
+### Features
+- Added suppport fpr v 4.4 and above
+
 ## Version: [v1.0.4](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.0.4) | Created: 2024-02-07
 ### Bug Fixes
 - Replaced regex pattern transaction name with url template format
