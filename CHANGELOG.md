@@ -1,3 +1,6 @@
+## Version: [v1.1.3](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.1.3) | Created: 2024-07-25
+
+
 ## Version: [v1.1.1](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.1.1) | Created: 2024-07-01
 ### Features
 - Added suppport fpr v 4.4 and above
