@@ -1,3 +1,6 @@
+## Version: [v1.1.4](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.1.4) | Created: 2024-08-28
+
+
 ## Version: [v1.1.3](https://github.com/newrelic/newrelic-java-micronaut-http/releases/tag/v1.1.3) | Created: 2024-07-25
 
 
