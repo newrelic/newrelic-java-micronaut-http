@@ -1,14 +1,23 @@
-package io.micronaut.http.annotation;
+package com.nrlabs.instrumentation.micronaut.http;
+
+import java.util.logging.Level;
 
 import com.newrelic.api.agent.NewRelic;
+import com.newrelic.api.agent.Trace;
 import com.newrelic.api.agent.TransactionNamePriority;
-import com.newrelic.api.agent.weaver.MatchType;
 import com.newrelic.api.agent.weaver.WeaveIntoAllMethods;
 import com.newrelic.api.agent.weaver.WeaveWithAnnotation;
 import com.newrelic.api.agent.weaver.Weaver;
 
-@WeaveWithAnnotation(annotationClasses = {"io.micronaut.http.annotation.Controller"},type = MatchType.Interface)
-public class Controller_Instrumentation {
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Delete;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.Head;
+import io.micronaut.http.annotation.Patch;
+import io.micronaut.http.annotation.Post;
+import io.micronaut.http.annotation.Put;
+
+public class MicronautSubresourceInstrumentation {
 
 	@WeaveWithAnnotation(annotationClasses = {"io.micronaut.http.annotation.Get", "io.micronaut.http.annotation.Post", "io.micronaut.http.annotation.Delete",
 			"io.micronaut.http.annotation.Put", "io.micronaut.http.annotation.Head", "io.micronaut.http.annotation.Trace", "io.micronaut.http.annotation.Patch"})
@@ -92,7 +101,29 @@ public class Controller_Instrumentation {
 									}
 								}
 							} else {
-
+								Head head = Weaver.getMethodAnnotation(Head.class);
+								if(head != null) {
+									methodName = "HEAD";
+									value = head.value();
+									if(value == null) {
+										String[] values = head.uris();
+										if(values != null) {
+											value = String.join(",", values);
+										}
+									}
+								} else {
+									io.micronaut.http.annotation.Trace trace = Weaver.getMethodAnnotation(io.micronaut.http.annotation.Trace.class);
+									if(trace != null) {
+										methodName = "TRACE";
+										value = trace.value();
+										if(value == null) {
+											String[] values = trace.uris();
+											if(values != null) {
+												value = String.join(",", values);
+											}
+										}
+									}
+								}
 							}
 						}
 					}

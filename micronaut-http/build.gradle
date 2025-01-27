@@ -24,7 +24,7 @@ jar {
 }
 
 verifyInstrumentation {
-	passes 'io.micronaut:micronaut-http-client:(3.0.3,)'
+	passes 'io.micronaut:micronaut-http:(2.0.0,)'
 	excludeRegex '.*RC[0-9]'
 	excludeRegex '.*M[0-9]'
 }
