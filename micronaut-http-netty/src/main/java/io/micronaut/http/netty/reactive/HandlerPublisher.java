@@ -9,7 +9,7 @@ import io.netty.channel.ChannelHandlerContext;
 @Weave
 public abstract class HandlerPublisher<T> {
 
-	@Trace(dispatcher = true)
+	@Trace
 	public void channelRead(ChannelHandlerContext ctx, Object message) {
 		Weaver.callOriginal();
 	}

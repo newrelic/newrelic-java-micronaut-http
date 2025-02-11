@@ -18,11 +18,11 @@ public class MicronautHeaders implements Headers {
 	private HttpResponse<?> response = null;
 	
 	public MicronautHeaders(HttpRequest<?> req) {
-		request = req;
+		this(req,null);
 	}
 	
 	public MicronautHeaders(HttpResponse<?> resp) {
-		response = resp;
+		this(null,resp);
 	}
 	
 	public MicronautHeaders(HttpRequest<?> req,HttpResponse<?> resp) {
