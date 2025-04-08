@@ -7,14 +7,14 @@ import com.newrelic.api.agent.Trace;
 import com.newrelic.api.agent.TransactionNamePriority;
 import com.newrelic.api.agent.weaver.Weave;
 import com.newrelic.api.agent.weaver.Weaver;
-import com.newrelic.instrumentation.micronaut.netty_2.Utils;
+import com.nr.agent.instrumentation.micronaut.netty_2.Utils;
 
 import io.micronaut.http.HttpMethod;
 import io.micronaut.web.router.RouteMatch;
 import io.netty.channel.ChannelHandlerContext;
 
 @Weave
-abstract class RoutingInBoundHandler {
+abstract class RoutingInBoundHandler_Instrumentation {
 
 	@Trace
 	protected void channelRead0(ChannelHandlerContext ctx, io.micronaut.http.HttpRequest<?> request) {
@@ -33,7 +33,8 @@ abstract class RoutingInBoundHandler {
 			} else {
 				sb.append("UnknownURI");
 			}
-			NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.FRAMEWORK_LOW, false, "Micronaut-Netty", sb.toString());
+			
+//			NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.FRAMEWORK_LOW, false, "Micronaut-Netty", sb.toString());
 		}
 		Weaver.callOriginal();
 	}		

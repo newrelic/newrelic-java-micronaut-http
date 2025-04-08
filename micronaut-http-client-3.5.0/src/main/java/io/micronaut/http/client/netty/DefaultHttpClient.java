@@ -11,10 +11,10 @@ import com.newrelic.api.agent.weaver.MatchType;
 import com.newrelic.api.agent.weaver.NewField;
 import com.newrelic.api.agent.weaver.Weave;
 import com.newrelic.api.agent.weaver.Weaver;
-import com.newrelic.instrumentation.micronaut.http.client3.MicronautHeaders;
-import com.newrelic.instrumentation.micronaut.http.client3.ReactorListener;
-import com.newrelic.instrumentation.micronaut.http.client3.ResponseConsumer;
-import com.newrelic.instrumentation.micronaut.http.client3.Utils;
+import com.newrelic.instrumentation.micronaut.http.client35.MicronautHeaders;
+import com.newrelic.instrumentation.micronaut.http.client35.ReactorListener;
+import com.newrelic.instrumentation.micronaut.http.client35.ResponseConsumer;
+import com.newrelic.instrumentation.micronaut.http.client35.Utils;
 
 import io.micronaut.core.io.buffer.ByteBuffer;
 import io.micronaut.core.type.Argument;
@@ -156,36 +156,4 @@ public abstract class DefaultHttpClient {
 		return result;
 	}
 	
-	@Weave(type = MatchType.BaseClass)
-	static abstract class SimpleChannelInboundHandlerInstrumented<I> {
-		
-		@NewField
-		private Token token = null;
-		
-        SimpleChannelInboundHandlerInstrumented() {
-        	token = NewRelic.getAgent().getTransaction().getToken();
-        }
-
-        SimpleChannelInboundHandlerInstrumented(boolean autoRelease) {
-        	token = NewRelic.getAgent().getTransaction().getToken();
-        }
-        
-        @Trace(async = true)
-        protected void channelReadInstrumented(ChannelHandlerContext ctx, I msg) {
-        	if(token != null) {
-        		token.linkAndExpire();
-        		token = null;
-        	}
-        	Weaver.callOriginal();
-        }
-        
-        @Trace(async = true)
-        protected void channelRead0(ChannelHandlerContext ctx, I msg) {
-        	if(token != null) {
-        		token.linkAndExpire();
-        		token = null;
-        	}
-        	Weaver.callOriginal();
-        }
-	}
 }

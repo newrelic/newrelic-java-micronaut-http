@@ -1,5 +1,6 @@
-package com.newrelic.instrumentation.micronaut.http.client;
+package com.newrelic.instrumentation.micronaut.http.client4;
 
+import java.util.function.Consumer;
 import java.util.logging.Level;
 
 import org.reactivestreams.Subscription;
@@ -9,10 +10,7 @@ import com.newrelic.api.agent.NewRelic;
 import com.newrelic.api.agent.Segment;
 import com.newrelic.api.agent.Transaction;
 
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
-
-public class ReactorListener implements Action, Consumer<Subscription> {
+public class ReactorListener implements Runnable, Consumer<Subscription> {
 	
 	private Segment segment = null;
 	private Transaction txn = null;
@@ -34,6 +32,8 @@ public class ReactorListener implements Action, Consumer<Subscription> {
 			NewRelic.getAgent().getLogger().log(Level.FINEST, e, "An error occurred while trying to end segment in {0}",getClass().getName());
 		}
 	}
+
+
 
 	@Override
 	public void accept(Subscription t) {
