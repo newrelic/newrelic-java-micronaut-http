@@ -1,7 +1,5 @@
 package com.nrlabs.instrumentation.micronaut.http;
 
-import java.util.logging.Level;
-
 import com.newrelic.api.agent.NewRelic;
 import com.newrelic.api.agent.Trace;
 import com.newrelic.api.agent.TransactionNamePriority;
@@ -134,6 +132,7 @@ public class MicronautSubresourceInstrumentation {
 			sb.append(" - ");
 			if(controllerValue != null) {
 				sb.append(controllerValue);
+				sb.append('/');
 			}
 			if(value != null) {
 				sb.append(value);
