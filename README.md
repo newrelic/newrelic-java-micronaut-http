@@ -14,8 +14,17 @@
 ![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic/newrelic-java-micronaut-http)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic/newrelic-java-micronaut-http)
 ![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic/newrelic-java-micronaut-http)
+---
 
+**Repository Archived**
 
+Please be aware that maintenance on this repository has been suspended, and it is now in an archived state. The functionality previously available here has been incorporated into the [New Relic Java Agent](https://github.com/newrelic/newrelic-java-agent).
+
+For any enhancement requests or issues related to the capabilities originally found in this repository, please direct them to the [New Relic Java Agent](https://github.com/newrelic/newrelic-java-agent).
+
+Thank you for your understanding and support.
+
+---
 # New Relic Java Agent Instrumentation for Micronaut HTTP Components
 
 New Relic Java Agent instrumentation for HTTP components of Micronaut (https://micronaut.io/)
